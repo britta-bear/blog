@@ -3,20 +3,12 @@
         <title>Gadget Laboratory's blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Gadget Laboratory's Blog</a></h1>
-        </div>
-
-        <div>
-            <h2><a href="">Part 1</a></h2>
-            <p>Hello there.</p>
-            <p>published: 10.12.2016, 15:20</p>
-        </div>
-
-        <div>
-            <h2><a href="">Part 2</a></h2>
-            <p>Hello again.</p>
-            <p>published: 10.12.2016, 15:24</p>
-        </div>
+    {% for post in posts %}
+    <div>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>published: {{ post.published_date }}</p>
+    </div>
+    {% endfor %}
     </body>
 </html>
